@@ -19,9 +19,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -39,3 +37,5 @@ jobs:
       with:
         username: ${{ vars.LOGIN }}
         password: ${{ secrets.TOKEN_DOCKER }}
+    - name: Docker push
+      run: docker push
