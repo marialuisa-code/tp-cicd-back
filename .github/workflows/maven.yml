@@ -9,7 +9,7 @@
 name: Java CI with Maven
 
 env:
-   imagename: marialuisaharanita/maven-app:${{github.ref_name}}
+   imagename: marialuisaharanita/maven-app:${{ github.ref_name }}
    
 on:
   push:
