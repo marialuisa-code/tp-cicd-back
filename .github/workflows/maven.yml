@@ -17,8 +17,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-   
-
+    if: ${{ github.ref_name == 'develop' || github.ref_name == 'main' || startsWith(github.ref, 'refs/tags/') }}
+    environment: ${{ github.ref_name == 'develop' && 'Developement' || 'Production' }}
     env:
       imagename: marialuisaharanita/maven-app:${{ github.ref_name }}
     outputs:
