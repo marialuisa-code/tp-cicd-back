@@ -17,9 +17,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+   
 
     env:
       imagename: marialuisaharanita/maven-app:${{ github.ref_name }}
+    outputs:
+      imagename: ${{ env.imagename }}
 
     steps:
       - uses: actions/checkout@v4
